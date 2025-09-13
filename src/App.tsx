@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthWrapper } from './components/Auth/AuthWrapper';
 import { useStore } from './store/useStore';
@@ -13,14 +13,18 @@ import { EventsPage } from './components/Events/EventsPage';
 
 function App() {
   const { currentView } = useStore();
-  const { user, tenant } = useAuthStore();
+  const { user, tenant, checkAuth } = useAuthStore();
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
 
   const getPageConfig = () => {
     switch (currentView) {
       case 'dashboard':
         return {
           title: 'Dashboard',
-          subtitle: `Welcome back, ${user?.name}! Here's what's happening with ${tenant?.name || 'your business'}.`,
+          subtitle: `Welcome back, ${user?.name || 'User'}! Here's what's happening with ${tenant?.name || 'your business'}.`,
           component: <Dashboard />,
         };
       case 'products':
@@ -50,7 +54,7 @@ function App() {
       default:
         return {
           title: 'Dashboard',
-          subtitle: `Welcome back, ${user?.name}! Here's what's happening with ${tenant?.name || 'your business'}.`,
+          subtitle: `Welcome back, ${user?.name || 'User'}! Here's what's happening with ${tenant?.name || 'your business'}.`,
           component: <Dashboard />,
         };
     }
