@@ -62,11 +62,19 @@ npm install
 ```
 
 ### 2. Environment Setup
-1. Copy `.env.example` to `.env`
-2. For production, fill in your Supabase credentials:
+  1. For production, fill in your Supabase credentials:
    ```
-   VITE_SUPABASE_URL=your_supabase_project_url
-   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+ # Supabase Credentials
+    VITE_SUPABASE_URL=your_supabase_project_url
+    VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+ # Shopify Credentials
+    SHOPIFY_API_KEY=your_shopify_api_key
+    SHOPIFY_ACCESS_TOKEN=your_shopify_access_token
+    SHOPIFY_API_SECRET=your_shopify_api_secret
+
+ # Vercel Deployment URL
+    VERCEL_URL=your-app.vercel.app
    ```
 
 ### 3. VS Code Extensions (Required)
