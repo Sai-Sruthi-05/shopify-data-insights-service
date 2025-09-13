@@ -46,7 +46,7 @@ export interface ShopifyOrder {
 }
 
 export class ShopifyService {
-  private static baseUrl = 'https://your-store.myshopify.com/admin/api/2023-10';
+  private static baseUrl = 'https://xeno-demo-store1.myshopify.com/admin/api/2023-10';
   private static accessToken = process.env.SHOPIFY_ACCESS_TOKEN;
 
   static async getProducts(tenantId: string): Promise<ShopifyProduct[]> {
