@@ -14,7 +14,7 @@ top customers, and order analytics built with React, TypeScript, Supabase, and P
   - ✅ Customers data with full profiles
   - ✅ Orders with detailed product information
   - ✅ Products with inventory and sales data
-  - ✅ **BONUS**: Custom events (cart abandoned, checkout started, product viewed, user registered)
+  - ✅ Custom events (cart abandoned, checkout started, product viewed, user registered)
 - ✅ PostgreSQL database integration with Supabase
 - ✅ **Multi-tenant architecture** with complete data isolation using tenant identifiers
 
